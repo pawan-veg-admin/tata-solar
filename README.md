@@ -544,16 +544,18 @@
                 confirmation.classList.remove('hidden');
                 submitButton.disabled = true;
 
+                // --- FIX APPLIED HERE: Removed hardcoded %0A and relying on template literal newlines ---
                 // Construct the WhatsApp message (Content kept in Hindi/Hinglish for the recipient)
-                let message = `नया Solar Lead प्राप्त हुआ है:%0A
-नाम: ${name}%0A
-मोबाइल: ${phone}%0A
-लोकेशन: ${location}%0A
-बिजली बिल: ${bill}%0A
-उद्देश्य: ${purpose}%0A
-Free Site Visit: ${visit}`;
+                let message = `🚀 नया Solar Lead प्राप्त हुआ है:
 
-                // Create the WhatsApp URL with the destination number
+👤 नाम: ${name}
+📱 मोबाइल: ${phone}
+📍 लोकेशन: ${location}
+💡 बिजली बिल (मासिक): ${bill}
+🏠 उद्देश्य: ${purpose}
+✅ Free Site Visit चाहिए: ${visit}`;
+
+                // Create the WhatsApp URL with the destination number. encodeURIComponent converts the literal newlines into %0A
                 let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
                 
                 // 2. Wait 3 seconds, then open WhatsApp in a new tab
