@@ -43,6 +43,11 @@
                 min-width: 600px; /* Ensure table is scrollable on small screens */
             }
         }
+        /* Razorpay button alignment */
+        .razorpay-form {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -462,13 +467,16 @@
         </div>
     </section>
 
-    <!-- 10. LEAD FORM SECTION (WhatsApp Integration) -->
+    <!-- 10. LEAD FORM SECTION (WhatsApp Integration & Razorpay) -->
     <section id="lead-form" class="py-16 bg-primary">
         <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-white mb-8">
                 Free Solar Consultation Form
             </h2>
-            <form id="solar-quote-form" class="bg-white p-6 md:p-10 rounded-xl shadow-2xl space-y-4">
+
+            <!-- OPTION 1: WhatsApp Inquiry Form -->
+            <form id="solar-quote-form" class="bg-white p-6 md:p-10 rounded-xl shadow-2xl space-y-4 mb-8">
+                <h3 class="text-xl font-bold text-primary mb-3">पहले Free Quote लें (WhatsApp द्वारा)</h3>
                 <div class="relative">
                     <label for="name" class="block text-sm font-medium text-gray-700">आपका नाम</label>
                     <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-primary focus:border-primary">
@@ -507,6 +515,24 @@
                 </button>
                 <p id="form-message" class="text-center text-sm text-red-500 hidden"></p>
             </form>
+
+            <!-- OPTION 2: Direct Payment/Booking Button (Razorpay) -->
+            <div class="bg-white p-6 md:p-10 rounded-xl shadow-2xl text-center border-t-4 border-primary">
+                <h3 class="text-2xl font-bold text-primary mb-4">✨ सीधे ₹1000 में अपनी Site Visit और बुकिंग सुनिश्चित करें ✨</h3>
+                <p class="text-gray-700 mb-6">
+                    मात्र **₹1000** का टोकन अमाउंट देकर अपनी प्राथमिकता बुकिंग (Priority Booking) कंफर्म करें। यह राशि आपके फाइनल सिस्टम बिल में **पूरी तरह एडजस्ट** हो जाएगी।
+                </p>
+                
+                <!-- Razorpay Button Integration -->
+                <div class="razorpay-form">
+                    <form>
+                        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_RcUsi38cv6CPq2" async> </script>
+                    </form>
+                </div>
+                <!-- End Razorpay Button -->
+
+            </div>
+            
         </div>
     </section>
 
