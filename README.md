@@ -25,15 +25,6 @@
         .bg-secondary { background-color: var(--secondary-yellow); }
         .hover-shadow:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
         
-        /* Custom Hero Background (Using user provided Google Drive Link) */
-        .hero-bg {
-            /* Using the image ID from the provided Google Drive link: 1LORsLRSfFRLvZw4bpQAjCXxDShWC6VZn */
-            /* NOTE: Google Drive links might fail due to hotlinking restrictions or sharing settings. */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://drive.google.com/uc?id=1LORsLRSfFRLvZw4bpQAjCXxDShWC6VZn');
-            background-size: cover;
-            background-position: center;
-        }
-
         /* Mobile-first table styling */
         @media (max-width: 768px) {
             .table-container {
@@ -57,7 +48,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             <!-- Logo/Company Name -->
             <div class="flex items-center space-x-2">
-                <img src="https://placehold.co/40x40/008037/FFFFFF?text=A" alt="Aashi Green Energy Logo" class="h-10 w-10 rounded-full">
+                <img src="https://placehold.co/40x40/008037/FFFFFF?text=A" onerror="this.onerror=null;this.src='https://placehold.co/40x40/008037/FFFFFF?text=A';" alt="Aashi Green Energy Logo" class="h-10 w-10 rounded-full">
                 <span class="text-xl font-extrabold text-primary">Aashi Green Energy</span>
                 <span class="hidden sm:inline text-sm font-medium text-gray-500">× TATA Solar</span>
             </div>
@@ -75,17 +66,38 @@
         </div>
     </header>
 
-    <!-- 1. HERO SECTION -->
-    <section id="hero" class="hero-bg text-white py-16 md:py-24 lg:py-32 flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight shadow-text">
+    <!-- 1. HERO SECTION (Video Player Added) -->
+    <section id="hero" class="bg-gray-100 py-8 md:py-12 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+            
+            <!-- YouTube Video Embed (16:9 Aspect Ratio) -->
+            <h2 class="text-2xl font-bold text-primary mb-4">सोलर से जुड़ी पूरी जानकारी इस वीडियो में देखें</h2>
+            <div class="max-w-4xl mx-auto mb-8">
+                <!-- Responsive Aspect Ratio Container (16:9) -->
+                <div class="relative pt-[56.25%] rounded-xl overflow-hidden shadow-2xl">
+                    <!-- iframe for YouTube Embed -->
+                    <iframe
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/YlI4lH0huEs?autoplay=0&amp;modestbranding=1&amp;showinfo=0&amp;rel=0"
+                        title="सोलर सब्सिडी, नेट मीटरिंग और सिस्टम की पूरी जानकारी"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+            <!-- End YouTube Video Embed -->
+
+            <!-- Existing Hero Content below video -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight text-gray-800">
                 <span class="bg-secondary text-primary px-3 py-1 rounded-lg inline-block">बिजली बिल से आज़ादी पाएं!</span>
             </h1>
-            <p class="text-xl sm:text-2xl lg:text-3xl font-medium mb-6">
+            <p class="text-xl sm:text-2xl lg:text-3xl font-medium mb-6 text-gray-700">
                 ऑन-ग्रिड सोलर सिस्टम – बिजली बिल **कम करें**, MPEB को **बिजली बेचें**!
             </p>
-            <p class="text-lg mb-8 bg-black bg-opacity-40 inline-block p-2 rounded-lg">
-                <i class="fas fa-check-circle text-secondary mr-2"></i> MPEB-अनुमोदित नेट मीटरिंग सिस्टम | **Jhabua & Surrounding Areas**
+            <p class="text-lg mb-8 inline-block p-2 rounded-lg text-gray-600">
+                <i class="fas fa-check-circle text-primary mr-2"></i> MPEB-अनुमोदित नेट मीटरिंग सिस्टम | **Jhabua & Surrounding Areas**
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -97,12 +109,12 @@
                 </a>
             </div>
             <!-- SEO Keyphrase Mention -->
-            <p class="text-sm mt-8 text-white/70">आपका भरोसेमंद **Tata Solar Jhabua** और **MP Govt Subsidy** पार्टनर.</p>
+            <p class="text-sm mt-8 text-gray-500">आपका भरोसेमंद **Tata Solar Jhabua** और **MP Govt Subsidy** पार्टनर.</p>
         </div>
     </section>
 
     <!-- 2. ABOUT SECTION -->
-    <section id="about" class="py-16 bg-gray-50">
+    <section id="about" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-extrabold text-primary mb-4">Aashi Green Energy Pvt. Ltd.</h2>
             <p class="text-2xl font-semibold text-gray-700 mb-6">
@@ -127,7 +139,7 @@
     </section>
 
     <!-- 3. WHAT IS ON-GRID SOLAR SYSTEM -->
-    <section id="ongrid-solar" class="py-16 bg-white">
+    <section id="ongrid-solar" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-primary mb-8 border-b-4 border-secondary inline-block pb-1">
                 ऑन-ग्रिड सोलर सिस्टम क्या है?
@@ -157,7 +169,7 @@
                     </p>
                 </div>
                 <!-- Simple Infographic Placeholder -->
-                <div class="bg-gray-100 p-6 rounded-xl shadow-lg border-l-8 border-primary">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-8 border-primary">
                     <h3 class="text-xl font-bold mb-3 text-primary">Simple Flow Diagram</h3>
                     <p class="text-lg">
                         <i class="fas fa-sun text-yellow-500"></i> Solar Panel <i class="fas fa-arrow-right"></i> Inverter <i class="fas fa-arrow-right"></i> Home/Business Usage <i class="fas fa-arrow-right"></i> Net Meter <i class="fas fa-arrows-alt-h text-primary"></i> MPEB Grid
@@ -171,7 +183,7 @@
     </section>
 
     <!-- 4. DOMESTIC SYSTEM CAPACITY & COST TABLE -->
-    <section id="domestic-cost" class="py-16 bg-gray-50">
+    <section id="domestic-cost" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-primary mb-4">
                 4. घरेलू सोलर सिस्टम (Domestic On-Grid)
@@ -180,7 +192,7 @@
                 **MP Govt Subsidy** के बाद आपकी लागत और बचत (Jhabua/Alirajpur)
             </p>
 
-            <div class="table-container bg-white p-4 rounded-xl shadow-2xl">
+            <div class="table-container bg-gray-50 p-4 rounded-xl shadow-2xl">
                 <table class="cost-table w-full text-left text-sm md:text-base border-collapse">
                     <thead class="bg-primary text-white">
                         <tr>
@@ -241,7 +253,7 @@
     </section>
 
     <!-- 5. COMMERCIAL SYSTEM CAPACITY & COST TABLE -->
-    <section id="commercial-cost" class="py-16 bg-white">
+    <section id="commercial-cost" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-primary mb-4">
                 5. व्यावसायिक सोलर सिस्टम (Commercial On-Grid)
@@ -250,7 +262,7 @@
                 बड़े बिजली बिल से आज़ादी पाएं! (20% Subsidy तक)
             </p>
 
-            <div class="table-container bg-gray-100 p-4 rounded-xl shadow-2xl">
+            <div class="table-container bg-white p-4 rounded-xl shadow-2xl">
                 <table class="cost-table w-full text-left text-sm md:text-base border-collapse">
                     <thead class="bg-gray-800 text-white">
                         <tr>
@@ -341,7 +353,7 @@
     </section>
 
     <!-- 7. FINANCE & SUBSIDY -->
-    <section id="finance-subsidy" class="py-16 bg-white">
+    <section id="finance-subsidy" class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-primary mb-8 border-b-4 border-secondary inline-block pb-1">
                 सरकारी सब्सिडी और आसान फाइनेंस
@@ -363,7 +375,7 @@
                 </div>
                 
                 <!-- Finance Details -->
-                <div class="p-6 bg-gray-100 rounded-xl shadow-lg border-l-4 border-primary">
+                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-primary">
                     <h3 class="text-2xl font-bold text-primary mb-3">Bank Loan और EMI</h3>
                     <p class="text-lg font-medium text-gray-700">सोलर लगाना अब और भी आसान!</p>
                     <ul class="space-y-2 text-gray-700 mt-2">
@@ -387,38 +399,38 @@
     </section>
 
     <!-- 8. MPEB NET METERING PROCESS (5 STEPS) -->
-    <section id="process" class="py-16 bg-gray-50">
+    <section id="process" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-primary mb-10 border-b-4 border-secondary inline-block pb-1">
                 MPEB नेट मीटरिंग प्रोसेस (5 आसान स्टेप्स)
             </h2>
             <div class="grid md:grid-cols-5 gap-6">
                 <!-- Step 1 -->
-                <div class="text-center p-4 bg-white rounded-xl shadow-md border-t-4 border-primary hover-shadow">
+                <div class="text-center p-4 bg-gray-50 rounded-xl shadow-md border-t-4 border-primary hover-shadow">
                     <div class="text-4xl font-extrabold text-primary mb-2">1</div>
                     <p class="text-lg font-bold">MPEB Portal पर Apply</p>
                     <p class="text-sm text-gray-600">आपके दस्तावेज़ों के साथ ऑनलाइन आवेदन।</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="text-center p-4 bg-white rounded-xl shadow-md border-t-4 border-primary hover-shadow">
+                <div class="text-center p-4 bg-gray-50 rounded-xl shadow-md border-t-4 border-primary hover-shadow">
                     <div class="text-4xl font-extrabold text-primary mb-2">2</div>
                     <p class="text-lg font-bold">Site Inspection</p>
                     <p class="text-sm text-gray-600">MPEB या हमारे इंजीनियर द्वारा छत का निरीक्षण।</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="text-center p-4 bg-white rounded-xl shadow-md border-t-4 border-primary hover-shadow">
+                <div class="text-center p-4 bg-gray-50 rounded-xl shadow-md border-t-4 border-primary hover-shadow">
                     <div class="text-4xl font-extrabold text-primary mb-2">3</div>
                     <p class="text-lg font-bold">System Installation</p>
                     <p class="text-sm text-gray-600">Tata Quality Panels और Inverter की स्थापना।</p>
                 </div>
                 <!-- Step 4 -->
-                <div class="text-center p-4 bg-white rounded-xl shadow-md border-t-4 border-primary hover-shadow">
+                <div class="text-center p-4 bg-gray-50 rounded-xl shadow-md border-t-4 border-primary hover-shadow">
                     <div class="text-4xl font-extrabold text-primary mb-2">4</div>
                     <p class="text-lg font-bold">Net Meter Connection</p>
                     <p class="text-sm text-gray-600">MPEB द्वारा नेट मीटर लगाकर कनेक्शन देना।</p>
                 </div>
                 <!-- Step 5 -->
-                <div class="text-center p-4 bg-white rounded-xl shadow-md border-t-4 border-primary hover-shadow">
+                <div class="text-center p-4 bg-gray-50 rounded-xl shadow-md border-t-4 border-primary hover-shadow">
                     <div class="text-4xl font-extrabold text-primary mb-2">5</div>
                     <p class="text-lg font-bold">Start Selling Power</p>
                     <p class="text-sm text-gray-600">बिजली बेचना शुरू करें और बिल में Credit पाएं!</p>
@@ -431,28 +443,28 @@
     </section>
 
     <!-- 9. OUR SERVICES -->
-    <section id="services" class="py-16 bg-white">
+    <section id="services" class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-center text-primary mb-8 border-b-4 border-secondary inline-block pb-1">
                 हमारी विशेषज्ञता (Our Services)
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div class="p-6 border rounded-xl shadow-sm">
+                <div class="p-6 border rounded-xl shadow-sm bg-white">
                     <i class="fas fa-map-marked-alt text-3xl text-primary mb-3"></i>
                     <h3 class="font-bold text-lg">Free Site Survey & Consultation</h3>
                     <p class="text-sm text-gray-600">आपकी छत की क्षमता का सटीक आकलन।</p>
                 </div>
-                <div class="p-6 border rounded-xl shadow-sm">
+                <div class="p-6 border rounded-xl shadow-sm bg-white">
                     <i class="fas fa-file-contract text-3xl text-primary mb-3"></i>
                     <h3 class="font-bold text-lg">MPEB Approval Support</h3>
                     <p class="text-sm text-gray-600">सरकारी अप्रूवल और कागज़ी कार्रवाई में पूरी सहायता।</p>
                 </div>
-                <div class="p-6 border rounded-xl shadow-sm">
+                <div class="p-6 border rounded-xl shadow-sm bg-white">
                     <i class="fas fa-solar-panel text-3xl text-primary mb-3"></i>
                     <h3 class="font-bold text-lg">Tata Quality Panels</h3>
                     <p class="text-sm text-gray-600">सिर्फ उच्चतम गुणवत्ता वाले **Tata Solar** पैनल का उपयोग।</p>
                 </div>
-                <div class="p-6 border rounded-xl shadow-sm">
+                <div class="p-6 border rounded-xl shadow-sm bg-white">
                     <i class="fas fa-headset text-3xl text-primary mb-3"></i>
                     <h3 class="font-bold text-lg">24×7 Maintenance Support</h3>
                     <p class="text-sm text-gray-600">इंस्टॉलेशन के बाद भी त्वरित और विश्वसनीय सपोर्ट।</p>
@@ -474,7 +486,7 @@
                 Free Solar Consultation Form
             </h2>
 
-            <!-- OPTION 1: WhatsApp Inquiry Form -->
+            <!-- OPTION 1: WhatsApp Inquiry Form (Now with Firestore Lead Saving) -->
             <form id="solar-quote-form" class="bg-white p-6 md:p-10 rounded-xl shadow-2xl space-y-4 mb-8">
                 <h3 class="text-xl font-bold text-primary mb-3">पहले Free Quote लें (WhatsApp द्वारा)</h3>
                 <div class="relative">
@@ -513,7 +525,7 @@
                 <button type="submit" id="whatsapp-btn" class="w-full inline-flex items-center justify-center bg-secondary text-primary text-xl font-bold py-3 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
                     <i class="fab fa-whatsapp mr-3"></i> ✅ Get Quote on WhatsApp
                 </button>
-                <p id="form-message" class="text-center text-sm text-red-500 hidden"></p>
+                <p id="form-message" class="text-center text-base font-semibold mt-3 hidden"></p>
             </form>
 
             <!-- OPTION 2: Direct Payment/Booking Button (Razorpay) -->
@@ -594,7 +606,7 @@
             <!-- Col 1: Logo & Tagline -->
             <div>
                 <div class="flex items-center space-x-2 mb-3">
-                    <img src="https://placehold.co/30x30/008037/FFFFFF?text=A" alt="Aashi Green Energy Logo" class="h-8 w-8 rounded-full">
+                    <img src="https://placehold.co/30x30/008037/FFFFFF?text=A" onerror="this.onerror=null;this.src='https://placehold.co/30x30/008037/FFFFFF?text=A';" alt="Aashi Green Energy Logo" class="h-8 w-8 rounded-full">
                     <span class="text-xl font-extrabold text-primary">Aashi Green Energy</span>
                 </div>
                 <p class="text-sm italic mb-2">“आपकी बचत – हमारा संकल्प 🌞”</p>
@@ -624,9 +636,81 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Form Submission (WhatsApp Link Generation) -->
-    <script>
-        document.getElementById('solar-quote-form').addEventListener('submit', function(e) {
+    <!-- JavaScript for Firebase and Form Submission -->
+    <script type="module">
+        // Firebase Imports (MUST use type="module" and full URLs for HTML)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global Firebase Variables (Mandatory Canvas Variables)
+        let db;
+        let auth;
+        let userId = 'anonymous'; // Default placeholder
+
+        // Canvas provided variables setup
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        
+        // --- Firebase Initialization and Auth ---
+        if (firebaseConfig) {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+            setLogLevel('Debug'); // Enable debug logging for Firestore
+
+            async function initializeAuth() {
+                try {
+                    // Try signing in with custom token if provided
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        const userCredential = await signInWithCustomToken(auth, __initial_auth_token);
+                        userId = userCredential.user.uid;
+                        console.log('Successfully signed in with custom token. User ID:', userId);
+                    } else {
+                        // Fallback to anonymous sign-in
+                        const userCredential = await signInAnonymously(auth);
+                        userId = userCredential.user.uid;
+                        console.log('Successfully signed in anonymously. User ID:', userId);
+                    }
+                } catch (error) {
+                    console.error("Firebase Auth Error: Could not sign in.", error);
+                    // Use a fallback unique ID if auth fails completely
+                    userId = 'fallback-' + crypto.randomUUID();
+                }
+            }
+            initializeAuth();
+        } else {
+            console.error("Firebase config is missing. Leads will not be stored persistently.");
+        }
+
+        // --- Firestore Lead Saving Function ---
+        async function saveLeadToFirestore(leadData) {
+            if (!db || userId.startsWith('fallback')) {
+                console.error("Firestore DB is not ready or authentication failed. Cannot save lead.");
+                return false;
+            }
+
+            // Path: /artifacts/{appId}/users/{userId}/leads (Private Data)
+            const leadsCollectionPath = `/artifacts/${appId}/users/${userId}/leads`;
+            const leadsCollectionRef = collection(db, leadsCollectionPath);
+
+            try {
+                const docRef = await addDoc(leadsCollectionRef, {
+                    ...leadData,
+                    timestamp: new Date().toISOString(),
+                    source: 'Website Form'
+                });
+                console.log("Lead successfully saved to Firestore with Document ID:", docRef.id);
+                return true;
+            } catch (error) {
+                console.error("Error saving lead to Firestore:", error);
+                return false;
+            }
+        }
+
+        // --- Form Submission Handler ---
+        document.getElementById('solar-quote-form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const name = document.getElementById('name').value;
@@ -635,38 +719,55 @@
             const bill = document.getElementById('bill').value;
             const usage = document.getElementById('usage').value;
             const visit = document.getElementById('visit').value;
+            
             const messageEl = document.getElementById('form-message');
+            const whatsappBtn = document.getElementById('whatsapp-btn');
             const whatsappNumber = '919425102683'; // Official number
 
-            if (!mobile) {
-                messageEl.textContent = "कृपया अपना मोबाइल नंबर दर्ज करें।";
+            if (!mobile || !bill) {
+                messageEl.textContent = "⚠️ कृपया सभी आवश्यक फ़ील्ड भरें।";
                 messageEl.classList.remove('hidden');
+                messageEl.classList.add('text-red-500');
                 return;
             }
 
-            // Construct the WhatsApp message in Hindi/English mix
-            const whatsappMessage = `नमस्ते Aashi Green Energy,\n\nमुझे सोलर कोटेशन चाहिए। यहाँ मेरा विवरण है:\n\n*नाम:* ${name}\n*मोबाइल:* ${mobile}\n*स्थान:* ${location}\n*मासिक बिल:* ₹${bill}\n*उपयोग का प्रकार:* ${usage}\n*Free Site Visit:* ${visit}\n\nकृपया मुझे सब्सिडी और फाइनल कॉस्ट बताएं।`;
+            // 1. Prepare Data and Set Loading State
+            const leadData = { name, mobile, location, bill: parseInt(bill), usage, visit };
             
-            // Encode the message
+            whatsappBtn.disabled = true;
+            whatsappBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i> डेटा सेव हो रहा है...';
+            messageEl.classList.remove('hidden');
+            messageEl.classList.remove('text-red-500', 'text-primary');
+            messageEl.textContent = "डेटाबेस में लीड सेव की जा रही है...";
+
+            // 2. Save to Firestore
+            const isSaved = await saveLeadToFirestore(leadData);
+
+            // 3. Update Message based on save status
+            if (isSaved) {
+                messageEl.textContent = "✅ लीड सफलतापूर्वक सेव हो गई। अब WhatsApp चैट शुरू होगी।";
+                messageEl.classList.add('text-primary');
+            } else {
+                messageEl.textContent = "⚠️ डेटा सेव नहीं हो पाया। फिर भी, हम आपको WhatsApp पर भेज रहे हैं।";
+                messageEl.classList.add('text-red-500');
+            }
+
+            // 4. Generate and open WhatsApp Link (always done as a secondary action)
+            const whatsappMessage = `नमस्ते Aashi Green Energy,\n\nमुझे सोलर कोटेशन चाहिए। यहाँ मेरा विवरण है:\n\n*नाम:* ${name}\n*मोबाइल:* ${mobile}\n*स्थान:* ${location}\n*मासिक बिल:* ₹${bill}\n*उपयोग का प्रकार:* ${usage}\n*Free Site Visit:* ${visit}\n\nकृपया मुझे सब्सिडी और फाइनल कॉस्ट बताएं। (Source: Website Lead ID: ${isSaved ? 'Saved' : 'Not Saved'})`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
-            
-            // Generate the final WhatsApp link
             const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
             // Open the WhatsApp link in a new tab
             window.open(whatsappLink, '_blank');
 
-            // Show success message briefly (optional, as the new window opens)
-            messageEl.textContent = "आपका विवरण WhatsApp पर भेजा जा रहा है।";
-            messageEl.classList.remove('hidden');
-            messageEl.classList.remove('text-red-500');
-            messageEl.classList.add('text-primary');
-            
-            // Reset the form after a short delay
-            setTimeout(() => {
-                this.reset();
-                messageEl.classList.add('hidden');
-            }, 5000);
+            // 5. Reset State
+            whatsappBtn.disabled = false;
+            whatsappBtn.innerHTML = '<i class="fab fa-whatsapp mr-3"></i> ✅ Get Quote on WhatsApp';
+            this.reset();
+            // Hide the message after a short delay
+            setTimeout(() => { 
+                messageEl.classList.add('hidden'); 
+            }, 7000);
         });
     </script>
 </body>
